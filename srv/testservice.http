@@ -1,0 +1,65 @@
+GET  http://localhost:4004/odata/v4/catalog/Product
+
+HTTP/1.1 200  - OK
+x-powered-by: Express
+x-correlation-id: 7f7e2c73-1c1d-47ca-9a8f-28ed1b9c89c1
+odata-version: 4.0
+content-type: application/json;odata.metadata=minimal
+date: Thu, 14 Mar 2024 14:21:35 GMT
+connection: close
+content-length: 506
+###
+POST  http://localhost:4004/odata/v4/catalog/Product
+content-type: application/json
+{
+		"id": 8,
+		"price": 400,
+		"processId": 456,
+		"productType": "Specialty"
+}
+
+HTTP/1.1 401  - Unauthorized
+x-powered-by: Express
+x-correlation-id: 95ab349f-f1e8-4809-942d-d1ccb5b995dd
+odata-version: 4.0
+content-type: application/json;odata.metadata=minimal
+date: Thu, 14 Mar 2024 16:58:05 GMT
+connection: close
+content-length: 77
+###
+DELETE  http://localhost:4004/odata/v4/catalog/Product/3
+
+HTTP/1.1 204  - No Content
+x-powered-by: Express
+x-correlation-id: 08486c4d-9060-4aa4-9727-78981d3fb71b
+odata-version: 4.0
+date: Thu, 14 Mar 2024 14:23:19 GMT
+connection: close
+###
+PUT http://localhost:4004/odata/v4/catalog/User/3
+content-type: application/json
+{
+    "name": "deep",
+	"email": "deep@12gamil.com"
+    
+}
+
+HTTP/1.1 200  - OK
+x-powered-by: Express
+x-correlation-id: ed05ceda-1ac3-47d1-9cdd-c4f05432d3e0
+odata-version: 4.0
+content-type: application/json;odata.metadata=minimal
+date: Tue, 12 Mar 2024 18:50:49 GMT
+connection: close
+content-length: 96
+###
+GET  http://localhost:4004/odata/v4/catalog/Product/3
+
+HTTP/1.1 404  - Not Found
+x-powered-by: Express
+x-correlation-id: 410303f3-6f68-4848-bdbb-ac58f3ae02d8
+odata-version: 4.0
+content-type: application/json;odata.metadata=minimal
+date: Tue, 12 Mar 2024 19:43:41 GMT
+connection: close
+content-length: 46
