@@ -1,0 +1,44 @@
+POST http://localhost:4004/odata/v4/catalog/Company
+content-type: application/json
+	{    "id": 5,
+			"name": "Depak",
+			"email": "rd12@gmail.com",
+			"password": "anb@"
+		}
+
+HTTP/1.1 400  - Bad Request
+x-powered-by: Express
+x-correlation-id: 7cf94ca4-b7e9-4a52-b42a-3be265b97aa0
+odata-version: 4.0
+content-type: application/json;odata.metadata=minimal
+date: Mon, 18 Mar 2024 15:06:18 GMT
+connection: close
+content-length: 86
+###
+DELETE  http://localhost:4004/odata/v4/catalog/User/4
+
+HTTP/1.1 204  - No Content
+x-powered-by: Express
+x-correlation-id: 8e877757-3baa-4d6c-8e68-0b2679d9d9f5
+odata-version: 4.0
+date: Mon, 18 Mar 2024 15:06:23 GMT
+connection: close
+###
+PUT  http://localhost:4004/odata/v4/catalog/User/5
+content-type: application/json
+	{    
+			"name": "AMAN",
+			"email": "rd12@gmail.com",
+			"password": "anb@"
+		}
+###
+GET https://port5000-workspaces-ws-nqhrm.us10.trial.applicationstudio.cloud.sap/odata/v4/catalog/Company
+
+HTTP/1.1 401  - Unauthorized
+date: Thu, 21 Mar 2024 17:06:03 GMT
+content-length: 0
+x-envoy-upstream-service-time: 1
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy: frame-ancestors 'self' *.us10cf.trial.applicationstudio.cloud.sap gw.us10.trial.applicationstudio.cloud.sap *.us10.trial.applicationstudio.cloud.sap;
+server: sap-business-application-studio
+connection: close
